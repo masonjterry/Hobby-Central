@@ -1,2 +1,2 @@
-# Skill-Swap
-Skill Swap - An app where you can learn a new skill
+# Hobby Central
+Hobby Central - An app where you can learn a new hobby
