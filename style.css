@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #42a5f5;
+  font-family: "Share", cursive;
+}
+
+#logo {
+  font-family: "Lobster", cursive;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+h1, h2 {
+  text-shadow: 1px 1px #333;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 2px #777;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: #42a5f5;
+}
+
+.slide {
+  animation-duration: 2s;
+  animation-name: slide-up;
+}
+
+@keyframes slide-up {
+	from {
+    margin-top: 300%;
+    width: 100%;
+  }
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.category, .hobby-list, .hobby {
+  color: #ffffff;
+}
+
+.list-directions {
+  color: #42a5f5;
+  background-color: #ffffff;
+  text-align: center;
+  border: solid 2px #555;
+  border-radius: 10px;
+  box-shadow: 2px 2px #777;
+  height: 500px;
+}
+
+button {
+  margin: 5px;
+}
+
+#password-label, #username-label {
+  color: #ffffff;
+}
+
+#login-btn, #new-user-btn {
+  background-color: white;
+}
