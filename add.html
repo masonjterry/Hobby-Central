@@ -52,25 +52,55 @@
             <option value="woodworking">Woodworking</option>
             <option value="cooking">Cooking</option>
             <option value="miscellaneous">Miscellaneous</option>
+            <option value="add">Add A Category</option>
           </select>
         </div>
       </div>
-      <!-- Hobby List Selection -->
+        <!-- Category (if the add one) -->
       <div id="dropdown2" class="row">
-        <div class="input-field hobby-list col s6 offset-s3">
-          <select id="hobby-list" onchange="selectFromHobbyList()">
-            <option value="null">Pick A Category</option>
-            <option value="woodworking">Woodworking</option>
-            <option value="cooking">Cooking</option>
-            <option value="miscellaneous">Miscellaneous</option>
-          </select>
-        </div>
-      </div>
-      <!-- Directions -->
-      <div id="directions" class="row">
-        <div class="col s10 offset-s1">
-          <!-- Display directions here -->
-          <p class="list-directions">Directions</p>
+        <div class="col s6 offset-s3">
+          <!-- Hobby Name -->
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <input placeholder="Hobby Name" id="first_name" type="text" class="validate">
+              <label for="first_name">Hobby Name</label>
+            </div>
+          </div>
+          <!-- Material Needed -->
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <textarea id="textarea1" placeholder="Add your materials here. Please put a comma between each item. Example: mixer, can opener, large bowl,..." class="materialize-textarea"></textarea>
+              <label for="textarea1">Material Needed</label>
+            </div>
+          </div>
+          <!-- Step input -->
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <textarea id="textarea1" placeholder="Add your steps here" class="materialize-textarea"></textarea>
+              <label for="textarea1">List of Steps</label>
+            </div>
+          </div>
+          <!-- Image Input -->
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <textarea id="textarea1" placeholder="Add your image links here" class="materialize-textarea"></textarea>
+              <label for="textarea1">Image Links</label>
+            </div>
+          </div>
+          <!-- Video input -->
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <textarea id="textarea1" placeholder="Add your video link here" class="materialize-textarea"></textarea>
+              <label for="textarea1">Video Links</label>
+            </div>
+          </div>
+          <!-- Submit button -->
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <button id="new-user-btn" class="btn waves-effect waves-light light-blue-text" type="submit" name="action">Submit
+                <i class="material-icons right">check</i>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@ h2 {
   color: #ffffff;
 }
 
-.list-directions {
+.list-directions, .add-div {
   color: #42a5f5;
   background-color: #ffffff;
   text-align: center;
