@@ -25,17 +25,17 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 .slide {
-  animation-duration: 2s;
-  animation-name: slide-up;
+  animation-duration: 1s;
+  animation-name: slide-left;
 }
 
-@keyframes slide-up {
+@keyframes slide-left {
 	from {
-    margin-top: 300%;
+    margin-left: 300%;
     width: 100%;
   }
   to {
-    margin-bottom: 0%;
+    margin-right: 0%;
     width: 100%;
   }
 }
@@ -66,10 +66,34 @@ button {
   margin: 5px;
 }
 
-#password-label, #username-label {
+#password-label,
+#username-label,
+#category-name-label,
+#hobby-name-label,
+#materials-label,
+#steps-label,
+#images-label,
+#videos-label {
   color: #ffffff;
 }
 
-#login-btn, #new-user-btn {
+#login-btn,
+#new-user-btn,
+#submit-hobby,
+#submit-category {
   background-color: white;
 }
+
+#category-name,
+#hobby-name,
+#materials,
+#steps,
+#images,
+#videos,
+#username,
+#password {
+     background-color: white;
+     border-radius: 10px;
+     box-shadow: 2px 2px 2px;
+     padding: 10px;
+   }
