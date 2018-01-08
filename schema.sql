@@ -18,10 +18,10 @@ CREATE TABLE hobbies (
  userid INTEGER(11),
  hobbyname VARCHAR(30) NOT NULL,
  category VARCHAR(30) NOT NULL,
- instructions TEXT,
- materials TEXT,
- imagelink TEXT,
- videolink TEXT,
+ instructions TEXT(4000),
+ materials TEXT(4000),
+ imagelink VARCHAR(255),
+ videolink VARCHAR(255),
  created DATETIME,
  PRIMARY KEY (id)
 );
