@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobby Central</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Share" rel="stylesheet">
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</head>
+<body>
+  <div class="slide">
+  <!-- Navbar -->
+    <nav>
+      <div class="nav-wrapper white">
+        <a href="#" class="brand-logo light-blue-text" id="logo">Hobby Central</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons light-blue-text">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="http://localhost:8080/" class="light-blue-text">Login</a></li>
+          <li><a href="http://localhost:8080/all" class="light-blue-text">Find A New Hobby</a></li>
+          <li><a href="http://localhost:8080/add" class="light-blue-text">Add A Hobby</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="http://localhost:8080/" class="light-blue-text">Login</a></li>
+          <li><a href="http://localhost:8080/all" class="light-blue-text">Find A New Hobby</a></li>
+          <li><a href="http://localhost:8080/add" class="light-blue-text">Add A Hobby</a></li>
+        </ul>
+      </div>
+    </nav>
+    {{{ body }}}
+  </div>
+</body>
+</html>

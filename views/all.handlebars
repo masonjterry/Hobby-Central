@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="row">
+    <div class="col s12">
+      <h1>Welcome to Hobby Central</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <h2>What would you like to learn today</h2>
+    </div>
+  </div>
+  <!-- Category Selection -->
+  <div id="dropdown1" class="row">
+    <div class="input-field category col s6 offset-s3">
+      <select id="category" onchange="selectCategory()">
+        {{#each hobby_list}}
+          {{#if category}}
+            {{> all/all-block }}
+          {{/if}}
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <!-- Hobby List Selection -->
+  <div id="dropdown2" class="row">
+    <div class="input-field hobby-list col s6 offset-s3">
+      <select id="hobby-list" onchange="selectFromHobbyList()">
+        {{#each hobby_list}}
+          {{#if hobby_name}}
+            {{> hobby/hobby-block }}
+          {{/if}}
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <!-- Directions -->
+  <div id="directions" class="row">
+    <div class="col s10 offset-s1">
+      <!-- Display directions here -->
+      <p class="list-directions">Directions</p>
+    </div>
+  </div>
+</div>
+<!-- JavaScript -->
+<script type="text/javascript" src="assets/js/all.js"></script>
