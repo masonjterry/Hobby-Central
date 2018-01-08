@@ -1,0 +1,85 @@
+<div class="main">
+  <div class="row">
+    <div class="col s12">
+      <h1>Welcome to Hobby Central</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <h2>What hobby would you like to add?</h2>
+    </div>
+  </div>
+  <!-- Category Selection -->
+  <div id="category-dropdown" class="slide row">
+    <div class="input-field category col s6 offset-s3">
+      <select id="category" onchange="selectCategory()">
+        {{#each category}}
+          {{> all/all-block }}
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <!-- Category Input -->
+  <div id="category-input" class="row">
+    <div class="input-field col s10 offset-s1">
+      <!-- New Category -->
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input placeholder="Category Name (required)" id="category-name" type="text" name="category-name">
+        </div>
+      </div>
+      <!-- Submit button -->
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <button id="submit-category" class="btn waves-effect waves-light light-blue-text" type="submit" name="action">Add Category
+            <i class="material-icons right">check</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Hobby Input -->
+  <div id="hobby-input" class="row">
+    <div class="col s10 offset-s1">
+      <!-- Hobby Name -->
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input placeholder="Hobby Name (required)" id="hobby-name" type="text" name="hobby-name">
+        </div>
+      </div>
+      <!-- Material Needed -->
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <textarea id="materials" placeholder="Add your materials here. Please put a comma between each item. Example: mixer, can opener, large bowl,... (required)" name="materials" class="materialize-textarea"></textarea>
+        </div>
+      </div>
+      <!-- Step input -->
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <textarea id="steps" placeholder="Add your steps here (required)" name="steps" class="materialize-textarea"></textarea>
+        </div>
+      </div>
+      <!-- Image Input -->
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <textarea id="images" placeholder="Add your image links here (optional)" name="images" class="materialize-textarea"></textarea>
+        </div>
+      </div>
+      <!-- Video input -->
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <textarea id="videos" placeholder="Add your video link here (optional)" name="videos" class="materialize-textarea"></textarea>
+          </div>
+      </div>
+      <!-- Submit button -->
+      <div class="row">
+        <div class="input-field col s6 offset-s3">
+          <button id="submit-hobby" class="btn waves-effect waves-light light-blue-text" type="submit" name="action">Submit Hobby
+            <i class="material-icons right">check</i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- JavaScript -->
+<script type="text/javascript" src="assets/js/add.js"></script>

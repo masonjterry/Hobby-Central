@@ -1,0 +1,27 @@
+{
+  "name": "hobby-central",
+  "version": "1.0.0",
+  "description": "Hobby Central - An app where you can learn a new hobby",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masonjterry/Hobby-Central.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masonjterry/Hobby-Central/issues"
+  },
+  "homepage": "https://github.com/masonjterry/Hobby-Central#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0",
+    "sequelize": "^4.29.0"
+  }
+}
