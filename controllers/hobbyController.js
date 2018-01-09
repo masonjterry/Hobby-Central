@@ -4,7 +4,6 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
     db.Hobbies.findAll({}).then(function(data){
-      console.log(data);
       res.render("all", {hobbies: data} );
     });
   });
