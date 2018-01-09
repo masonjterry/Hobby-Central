@@ -8,12 +8,12 @@ module.exports = function(app) {
     });
   });
 
-  // app.get("/login", function(req, res) {
-  //   db.User.findAll({}).then(function(data) {
-  //     console.log(data);
-  //     res.render("login", { user: data })
-  //   });
-  // });
+  app.get("/", function(req, res) {
+    db.User.findAll({}).then(function(data) {
+      console.log(data);
+      res.render("all", { category: req.body })
+    });
+  });
 
   app.post("/api/users/verify", function(req, res) {
     db.User.findAll({}).then(function(data) {
@@ -24,16 +24,6 @@ module.exports = function(app) {
       }
     });
   });
-
-  // app.get("/:category", function(req, res) {
-  //   db.Hobbies.findAll({
-  //     where: {
-  //       category: req.params
-  //     }
-  //   }).then(function(data) {
-  //     res.render("index", { categories: data })
-  //   });
-  // });
 
   app.get("/api/:id", function(req, res) {
     db.Hobbies.findAll({}).then(function(data) {

@@ -40,6 +40,10 @@ let username = localStorage.getItem("username");
 
 if (username != null) {
 
-  $("#header").text("Welcome back to Hobby Central " + username);
+  $("#login").text(username);
+  $("#mobile-login").text(username);
+  $("#welcome").text("Welcome back to Hobby Central, " + username)
+  $("#add-hobby").text("Add A Hobby");
+  $("#add-hobby-mobile").text("Add A Hobby");
 
 }
