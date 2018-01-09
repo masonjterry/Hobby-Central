@@ -13,10 +13,24 @@ let showDirections = document.getElementById("directions");
 showDirections.style.display = "none";
 
 function selectCategory() {
-
   let category = document.getElementById("category").value;
   console.log("category", category);
   showHobbyList.style.display = "block";
+
+  $.get("/api/all", function(data) {
+
+    var hobbyDropdown = [];
+
+    for (var i = 0; i < data.length; i++) {
+      console.log(data[i].category);
+      if (data[i].category === category) {
+        hobbyDropdown.push(data[i]);
+      }
+
+    }
+    console.log(hobbyDropdown);
+  });
+
 }
 
 function selectFromHobbyList() {
