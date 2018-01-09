@@ -13,7 +13,7 @@
   <div id="dropdown1" class="row">
     <div class="input-field category col s6 offset-s3">
       <select id="category" onchange="selectCategory()">
-        {{#each hobby_list}}
+        {{#each Hobbies}}
           {{#if category}}
             {{> all/all-block }}
           {{/if}}
@@ -25,8 +25,8 @@
   <div id="dropdown2" class="row">
     <div class="input-field hobby-list col s6 offset-s3">
       <select id="hobby-list" onchange="selectFromHobbyList()">
-        {{#each hobby_list}}
-          {{#if hobby_name}}
+        {{#each hobbies}}
+          {{#if name}}
             {{> hobby/hobby-block }}
           {{/if}}
         {{/each}}

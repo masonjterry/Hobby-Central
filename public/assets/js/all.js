@@ -3,6 +3,10 @@ $(document).ready(function(){
   $(".button-collapse").sideNav();
   $("select").material_select();
 
+  $.get("/api/all", "all", function(data) {
+    console.log(data);
+  });
+
 });
 
 let showCategoryList = document.getElementById("dropdown1");

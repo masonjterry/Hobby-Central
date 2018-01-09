@@ -1,32 +1,52 @@
-let express = require("express");
+var db = require("../models");
 
-let router = express.Router();
+module.exports = function(app) {
 
-let hobby = require("../models/hobby.js");
+  app.get("/", function(req, res) {
+    res.render("all");
+  });
 
+  app.get("/api/all", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data) {
+      res.json(data);
+    });
+  });
 
-// router.get("/", function(req, res) {
-//   res.render("index");
-// });
-//
-// router.get("/all", function(req, res) {
-//   hobby.all(function(data) {
-//     let hbsObject = {
-//       hobby: data
-//     };
-//     console.log(hbsObject);
-//     res.render("all", hbsObject);
-//   });
-// });
-//
-// router.get("/add", function(req, res) {
-//   hobby.all(function(data) {
-//     let hbsObject = {
-//       hobby: data
-//     };
-//     console.log(hbsObject);
-//     res.render("add", hbsObject);
-//   });
-// });
+  app.get("/login", function(req, res) {
+    res.render("login");
+  });
 
-module.exports = router;
+  app.get("/add", function(req, res) {
+    res.render("add");
+  });
+
+  app.get("/newuser", function(req, res) {
+    res.render("newuser");
+  });
+
+  app.post("/api/user", function(req, res) {
+    db.User.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      username: req.body.username,
+      password: req.body.password
+    }).then(function(data) {
+      res.json(data);
+    })
+  });
+
+  app.post("/api/hobby", function(req, res) {
+    db.Hobbies.create({
+      category: req.body.category,
+      name: req.body.name,
+      user: req.body.user,
+      materials: req.body.materials,
+      instructions: req.body.instructions,
+      images: req.body.images,
+      videos: req.body.videoss
+    }).then(function(data) {
+      res.json(data);
+    })
+  });
+}

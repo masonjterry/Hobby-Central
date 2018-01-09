@@ -66,21 +66,11 @@ button {
   margin: 5px;
 }
 
-#password-label,
-#username-label,
-#category-name-label,
-#hobby-name-label,
-#materials-label,
-#steps-label,
-#images-label,
-#videos-label {
-  color: #ffffff;
-}
-
 #login-btn,
 #new-user-btn,
 #submit-hobby,
-#submit-category {
+#submit-category,
+#create-user-btn {
   background-color: white;
 }
 
@@ -91,7 +81,10 @@ button {
 #images,
 #videos,
 #username,
-#password {
+#password,
+#email,
+#firstName,
+#lastName {
      background-color: white;
      border-radius: 10px;
      box-shadow: 2px 2px 2px;
