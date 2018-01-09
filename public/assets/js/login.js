@@ -14,6 +14,32 @@ $(document).ready(function(){
       password: password
     }
 
+    // encrypting password
+    // select all where usernames and passwords
+    // if false fail to log in
+    // if true set local storage to username
+
+    $.ajax({
+      url: "/api/users/verify",
+      method: "POST",
+      data: user
+    }).then(function(result) {
+      if (result) {
+        localStorage.clear();
+        localStorage.setItem("username", username);
+      } else {
+        console.log("fail");
+      }
+    });
+
   });
 
 });
+
+let username = localStorage.getItem("username");
+
+if (username != null) {
+
+  $("#header").text("Welcome back to Hobby Central " + username);
+
+}
