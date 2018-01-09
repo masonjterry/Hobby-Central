@@ -9,13 +9,32 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/:category", function(req, res) {
-    db.Hobbies.findAll({
-      where: category
-    }).then(function(data) {
-      res.render("all", { categories: data })
+  // app.get("/login", function(req, res) {
+  //   db.User.findAll({}).then(function(data) {
+  //     console.log(data);
+  //     res.render("login", { user: data })
+  //   });
+  // });
+
+  app.post("/api/users/verify", function(req, res) {
+    db.User.findAll({}).then(function(data) {
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].username === req.body.username && data[i].password === req.body.password) {
+          res.json(true);
+        }
+      }
     });
   });
+
+  // app.get("/:category", function(req, res) {
+  //   db.Hobbies.findAll({
+  //     where: {
+  //       category: req.params
+  //     }
+  //   }).then(function(data) {
+  //     res.render("index", { categories: data })
+  //   });
+  // });
 
   app.get("/api/:id", function(req, res) {
     db.Hobbies.findAll({}).then(function(data) {

@@ -28,21 +28,27 @@ $(document).ready(function(){
     let videos = $("#videos").val().trim();
     console.log("videos", videos);
 
-    let newHobby = {
-      category: category,
-      name: hobbyName,
-      user: "gordon",
-      materials: materials,
-      instructions: steps,
-      images: images,
-      videos: videos
-    }
+    if (localStorage.getItem("username") != null) {
 
-    $.ajax({
-      url: "/api/hobby",
-      method: "POST",
-      data: newHobby
-    });
+      let newHobby = {
+        category: category,
+        name: hobbyName,
+        user: localStorage.getItem("username"),
+        materials: materials,
+        instructions: steps,
+        images: images,
+        videos: videos
+      }
+
+      $.ajax({
+        url: "/api/hobby",
+        method: "POST",
+        data: newHobby
+      });
+
+    } else {
+      alert("please log in");
+    }
 
 
   });
