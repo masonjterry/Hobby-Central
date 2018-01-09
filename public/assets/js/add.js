@@ -1,9 +1,5 @@
 $(document).ready(function(){
 
-  $.get("/api/all", function(data) {
-    console.log(data);
-  });
-
   $(".button-collapse").sideNav();
   $("select").material_select();
 

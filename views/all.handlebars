@@ -13,10 +13,8 @@
   <div id="dropdown1" class="row">
     <div class="input-field category col s6 offset-s3">
       <select id="category" onchange="selectCategory()">
-        {{#each Hobbies}}
-          {{#if category}}
-            {{> all/all-block }}
-          {{/if}}
+        {{#each hobbies}}
+          <option value="{{this.category}}">{{this.category}}</option>
         {{/each}}
       </select>
     </div>
@@ -26,9 +24,7 @@
     <div class="input-field hobby-list col s6 offset-s3">
       <select id="hobby-list" onchange="selectFromHobbyList()">
         {{#each hobbies}}
-          {{#if name}}
-            {{> hobby/hobby-block }}
-          {{/if}}
+          <option value="{{this.id}}">{{this.name}}</option>
         {{/each}}
       </select>
     </div>
@@ -37,7 +33,14 @@
   <div id="directions" class="row">
     <div class="col s10 offset-s1">
       <!-- Display directions here -->
-      <p class="list-directions">Directions</p>
+      <div class="list-directions">Directions
+        {{#each hobbies}}
+          <div>{{this.materials}}</div>
+          <div>{{this.instructions}}</div>
+          <div>{{this.images}}</div>
+          <div>{{this.videos}}</div>
+        {{/each}}
+      </div>
     </div>
   </div>
 </div>

@@ -3,10 +3,21 @@ var db = require("../models");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    res.render("all");
+    db.Hobbies.findAll({}).then(function(data){
+      console.log(data);
+      res.render("all", {hobbies: data} );
+    });
   });
 
-  app.get("/api/all", function(req, res) {
+  app.get("/:category", function(req, res) {
+    db.Hobbies.findAll({
+      where: category
+    }).then(function(data) {
+      res.render("all", { categories: data })
+    });
+  });
+
+  app.get("/api/:id", function(req, res) {
     db.Hobbies.findAll({}).then(function(data) {
       res.json(data);
     });
