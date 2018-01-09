@@ -17,6 +17,8 @@ app.set("view engine", "handlebars");
 require("./controllers/hobbyController")(app);
 // require("./controllers/userController")(app);
 
+
+//sync set true or false if we have to deploy
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
