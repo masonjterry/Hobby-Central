@@ -3,17 +3,20 @@ $(document).ready(function(){
   $(".button-collapse").sideNav();
   $("select").material_select();
 
-  $("#submit-category").on("click", function(e) {
-    e.preventDefault();
-    let newCategory = $("#category-name").val().trim();
-    console.log("newCategory", newCategory);
-    showCategoryList.style.display = "none";
-    showCategoryInput.style.display = "none";
-    showHobbyInput.style.display = "block";
-  });
+  let category;
+
+  // $("#submit-category").on("click", function(e) {
+  //   e.preventDefault();
+  //   category = $("#category-name").val().trim();
+  //   console.log("newCategory", newCategory);
+  //   // showCategoryList.style.display = "none";
+  //   // showCategoryInput.style.display = "none";
+  //   // showHobbyInput.style.display = "block";
+  // });
 
   $("#submit-hobby").on("click", function(e) {
     e.preventDefault();
+    category = $("#category-name").val().trim();
     let hobbyName = $("#hobby-name").val().trim();
     console.log("hobbyName", hobbyName);
     let materials = $("#materials").val().trim();
@@ -24,19 +27,37 @@ $(document).ready(function(){
     console.log("images", images);
     let videos = $("#videos").val().trim();
     console.log("videos", videos);
+
+    let newHobby = {
+      category: category,
+      name: hobbyName,
+      user: "gordon",
+      materials: materials,
+      instructions: steps,
+      images: images,
+      videos: videos
+    }
+
+    $.ajax({
+      url: "/api/hobby",
+      method: "POST",
+      data: newHobby
+    });
+
+
   });
 
 });
 
-let showCategoryList = document.getElementById("category-dropdown");
-showCategoryList.style.display = "block";
-let showHobbyInput = document.getElementById("hobby-input");
-showHobbyInput.style.display = "none";
-let showCategoryInput = document.getElementById("category-input");
-showCategoryInput.style.display = "none";
+// let showCategoryList = document.getElementById("category-dropdown");
+// showCategoryList.style.display = "block";
+// let showHobbyInput = document.getElementById("hobby-input");
+// showHobbyInput.style.display = "none";
+// let showCategoryInput = document.getElementById("category-input");
+// showCategoryInput.style.display = "none";
 
 function selectCategory() {
-  let category = document.getElementById("category").value;
+  category = document.getElementById("category").value;
   console.log("category", category);
 
   if (category !== "add") {

@@ -1,8 +1,6 @@
 DROP DATABASE IF EXISTS hobbycentral_db;
-CREATE DATABASE hobbycentral_db;
-USE hobbycentral_db;
 
-
+<<<<<<< HEAD
 CREATE TABLE users (
  id INTEGER(11) AUTO_INCREMENT NOT NULL,
  username VARCHAR(30) NOT NULL,
@@ -25,3 +23,6 @@ CREATE TABLE hobbies (
  created DATETIME,
  PRIMARY KEY (id)
 );
+=======
+CREATE DATABASE hobbycentral_db;
+>>>>>>> a98760c7de86f6ec1a3c72add3ffdbb98ed3622c
