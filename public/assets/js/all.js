@@ -3,7 +3,7 @@ $(document).ready(function(){
   $(".button-collapse").sideNav();
   $("select").material_select();
 
-  $.get("/api/all", "all", function(data) {
+  $.get("/api/all", function(data) {
     console.log(data);
   });
 
