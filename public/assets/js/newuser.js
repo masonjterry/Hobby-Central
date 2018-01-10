@@ -28,6 +28,8 @@ $(document).ready(function(){
         url: "/api/user",
         method: "POST",
         data: newUser
+      }).then(function(result) {
+        
       });
 
       localStorage.clear();

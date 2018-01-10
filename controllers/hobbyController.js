@@ -52,7 +52,8 @@ module.exports = function(app) {
       password: req.body.password
     }).then(function(data) {
       res.json(data);
-    })
+    });
+    res.redirect("/");
   });
 
   app.post("/api/hobby", function(req, res) {
@@ -66,6 +67,11 @@ module.exports = function(app) {
       videos: req.body.videoss
     }).then(function(data) {
       res.json(data);
-    })
+    });
+
+  });
+
+  app.get("/add", function(req, res) {
+    res.redirect("/");
   });
 }

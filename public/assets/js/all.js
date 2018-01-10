@@ -3,6 +3,13 @@ $(document).ready(function(){
   $(".button-collapse").sideNav();
   $("select").material_select();
 
+  $("#logout").on("click", function() {
+    localStorage.clear();
+  });
+  $("#logout-mobile").on("click", function() {
+    localStorage.clear();
+  });
+
 });
 
 let showCategoryList = document.getElementById("dropdown1");
@@ -53,5 +60,7 @@ if (username != null) {
   $("#welcome").text("Welcome back to Hobby Central, " + username)
   $("#add-hobby").text("Add A Hobby");
   $("#add-hobby-mobile").text("Add A Hobby");
+  $("#logout").text("Logout");
+  $("#logout-mobile").text("Logout");
 
 }
