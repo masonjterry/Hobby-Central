@@ -28,14 +28,15 @@ $(document).ready(function(){
         url: "/api/user",
         method: "POST",
         data: newUser
+      }).then(function(result) {
+
       });
 
       localStorage.clear();
       localStorage.setItem("username", username);
 
     }
-
-
+    location.href="/";
   });
 
   function verify(lname, fname, email, username, password) {
