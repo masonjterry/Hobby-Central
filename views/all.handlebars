@@ -24,6 +24,9 @@
     <div class="input-field hobby-list col s6 offset-s3">
       <div id="hobby-list-placeholder"></div>
       <select id="hobby-list" onchange="selectFromHobbyList()">
+        {{#each categories}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
       </select>
     </div>
   </div>

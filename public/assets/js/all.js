@@ -23,7 +23,7 @@ function selectCategory() {
   let category = document.getElementById("category").value; // Woodworking
   console.log(category);
   showHobbyList.style.display = "block";
-  location.href="/hobby";
+  // location.href="/hobby";
 
   // $.get("/api/categories/" + category.toLowerCase(), function(hobbies) {
   //   var hobbyDropdown = [];

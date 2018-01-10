@@ -10,13 +10,11 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
     db.Hobbies.findAll({}).then(function(data){
-      console.log("data", data);
       let categories = {};
 
       data.forEach(function(category) {
         categories[toTitleCase(category.category)] = true;
       });
-      console.log("categories", categories);
 
       res.render("all", {categories: Object.keys(categories)} );
       //res.render("all", {hobbies: data} );
@@ -49,10 +47,6 @@ module.exports = function(app) {
         }
       }
     });
-  });
-
-  app.get("/api/user/verify", function(req, res) {
-    return res.redirect("/");
   });
 
   app.get("/api/:id", function(req, res) {
