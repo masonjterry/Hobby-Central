@@ -12,43 +12,31 @@ $(document).ready(function(){
 
 });
 
-let showCategoryList = document.getElementById("dropdown1");
-showCategoryList.style.display = "block";
-let showHobbyList = document.getElementById("dropdown2");
-showHobbyList.style.display = "none";
-let showDirections = document.getElementById("directions");
-showDirections.style.display = "none";
+// let showCategoryList = document.getElementById("dropdown1");
+// showCategoryList.style.display = "block";
+// let showHobbyList = document.getElementById("dropdown2");
+// showHobbyList.style.display = "none";
+// let showDirections = document.getElementById("directions");
+// showDirections.style.display = "none";
 
 function selectCategory() {
   let category = document.getElementById("category").value; // Woodworking
   console.log(category);
-  showHobbyList.style.display = "block";
-  // location.href="/hobby";
+  // showHobbyList.style.display = "block";
+  location.href="/hobby";
 
-  // $.get("/api/categories/" + category.toLowerCase(), function(hobbies) {
-  //   var hobbyDropdown = [];
-  //
-  //   for (let i = 0; i < data.length; i++) {
-  //     if (data[i].category === category) {
-  //       hobbyDropdown.push(data[i].name);
-  //     }
-  //
-  //   }
-  //   for (let i = 0; i < hobbyDropdown.length; i++) {
-  //     console.log(hobbyDropdown);
-  //     let list = $("<button class=\"btn\"></button>").text(hobbyDropdown[i]);
-  //     $("#hobby-list").append(list);
-  //   }
-  // });
+  $.get("/hobby/:category" + category.toLowerCase(), function(hobbies) {
+    
+  });
 
 }
 
 function selectFromHobbyList() {
   let hobbyList = document.getElementById("hobby-list").value;
   console.log(hobbyList);
-  showCategoryList.style.display = "none";
-  showHobbyList.style.display = "none";
-  showDirections.style.display = "block";
+  // showCategoryList.style.display = "none";
+  // showHobbyList.style.display = "none";
+  // showDirections.style.display = "block";
 }
 
 let username = localStorage.getItem("username");
