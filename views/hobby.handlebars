@@ -12,18 +12,17 @@
   <!-- Category Selection -->
   <div id="dropdown1" class="row">
     <div class="input-field category col s6 offset-s3">
-      <select id="category" onchange="selectCategory()">
-        {{#each categories}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
-      </select>
+      
     </div>
   </div>
   <!-- Hobby List Selection -->
   <div id="dropdown2" class="row">
     <div class="input-field hobby-list col s6 offset-s3">
       <div id="hobby-list-placeholder"></div>
-      <select id="hobby-list" onchange="selectFromHobbyList()">
+      <select id="hobby-list" onchange="selectCategory()">
+        {{#each hobbies}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
       </select>
     </div>
   </div>
