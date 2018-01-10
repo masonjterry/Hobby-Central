@@ -84,8 +84,18 @@ button {
 #email,
 #firstName,
 #lastName {
-     background-color: white;
-     border-radius: 10px;
-     box-shadow: 2px 2px 2px;
-     padding: 10px;
-   }
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px;
+  padding: 10px;
+}
+
+#imagesDiv,
+#materialsDiv,
+#videosDiv,
+#instructionsDiv {
+  font-size: 2rem;
+  color: #42a5f5;
+  border-bottom: solid 2px #aaa;
+  margin: 5px;
+}

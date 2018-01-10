@@ -38,7 +38,7 @@ $(document).ready(function(){
         aler("username and password to not match");
       }
     });
-
+    location.href="/";
   });
 
 });

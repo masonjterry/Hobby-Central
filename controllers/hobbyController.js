@@ -25,6 +25,10 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/user/verify", function(req, res) {
+    return res.redirect("/");
+  });
+
   app.get("/api/:id", function(req, res) {
     db.Hobbies.findAll({}).then(function(data) {
       res.json(data);
@@ -53,7 +57,6 @@ module.exports = function(app) {
     }).then(function(data) {
       res.json(data);
     });
-    res.redirect("/");
   });
 
   app.post("/api/hobby", function(req, res) {
@@ -71,7 +74,4 @@ module.exports = function(app) {
 
   });
 
-  app.get("/add", function(req, res) {
-    res.redirect("/");
-  });
-}
+  }
