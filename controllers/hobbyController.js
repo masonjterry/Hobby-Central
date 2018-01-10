@@ -24,21 +24,21 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/hobby", function(req, res) {
-    db.Hobbies.findAll({}).then(function(data){
-      console.log("data", data);
-      let hobbyList = {};
-
-      data.forEach(function(hobbyList) {
-        hobbyList[toTitleCase(hobbyList.name)] = true;
-      });
-      console.log("hobbyList", hobbyList);
-
-      res.render("hobby", {hobbies: Object.keys(hobbyList)} );
-      //res.render("all", {hobbies: data} );
-
-    });
-  });
+  // app.get("/hobby", function(req, res) {
+  //   db.Hobbies.findAll({}).then(function(data){
+  //     console.log("data", data);
+  //     let hobbyList = {};
+  //
+  //     data.forEach(function(hobbyList) {
+  //       hobbyList[toTitleCase(hobbyList.name)] = true;
+  //     });
+  //     console.log("hobbyList", hobbyList);
+  //
+  //     res.render("hobby", {hobbies: Object.keys(hobbyList)} );
+  //     //res.render("all", {hobbies: data} );
+  //
+  //   });
+  // });
 
 
   app.post("/api/users/verify", function(req, res) {
