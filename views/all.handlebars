@@ -9,14 +9,16 @@
       <h2>What would you like to learn today</h2>
     </div>
   </div>
-  <!-- Category Selection -->
-  <div id="dropdown1" class="row">
-    <div class="input-field category col s6 offset-s3">
-      <select id="category" onchange="selectCategory()">
-        {{#each categories}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
-      </select>
+  <div class="slide">
+    <!-- Category Selection -->
+    <div id="dropdown1" class="row">
+      <div class="input-field category col s6 offset-s3">
+        <select id="category" onchange="selectCategory()">
+          {{#each categories}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
     </div>
   </div>
 </div>
