@@ -1,6 +1,5 @@
-var db = require("../models");
+let db = require("../models");
 let Sequelize = require('sequelize');
-const Op = Sequelize.Op;
 
 function toTitleCase(str) {
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -22,27 +21,31 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/hobby/:category", function(req, res) {
-    db.Hobbies.findAll({
+  app.get("/api/hobby", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data) {
+        res.json(data);
+    });
+  });
 
-      where: {
-        category: req.params
-      }
+  app.get("/api/directions", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data) {
+        res.json(data);
+    });
+  });
 
-    }).then(function(data){
-      // console.log("data", data);
-      let hobbyList = {};
-
-      data.forEach(function(hobby) {
-        hobbyList[toTitleCase(hobby.name)] = true;
-      });
-      console.log("hobbyList", hobbyList);
-
-      res.render("hobby", {hobbies: Object.keys(hobbyList)} );
-      //res.render("all", {hobbies: data} );
+  app.get("/hobby", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data){
+      res.render("hobby", {hobbies: data} );
 
     });
   });
+
+  // app.get("/api/category/:category", function(req, res) {
+  //   db.Hobbies.findAll({}).then(function(data) {
+  //     console.log(data);
+  //     res.render("hobby", {hobbies: data});
+  //   });
+  // });
 
 
   app.post("/api/users/verify", function(req, res) {
@@ -55,38 +58,12 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/:id", function(req, res) {
-    db.Hobbies.findAll({}).then(function(data) {
-      res.json(data);
-    });
-  });
-
-  // app.get("/api/categories/:category", function(req, res) {
-  //   const category = req.params.category
-  //   // console.log("category", category);
-  //   db.Hobbies.findAll({
-  //     where: {
-  //       [Op.or]: [{category: category}, {category: toTitleCase(category)}]
-  //     }
-  //   }).then(function(data) {
-  //     console.log("hobbies", data);
-  //     let hobbies = {};
-  //
-  //     // data munging
-  //     data.forEach(function(hobbie) {
-  //       hobbies[toTitleCase(hobbie.name)] = true;
-  //     });
-  //
-  //     console.log("hobbies", Object.keys(hobbies));
-  //     //return Object.keys(hobbies);
-  //     res.send(Object.keys(hobbies));
-  //     //res.render("all", {hobbies: Object.keys(hobbies)} );
-  //     //res.json(data);
-  //   });
-  // });
-
   app.get("/login", function(req, res) {
     res.render("login");
+  });
+
+  app.get("/directions", function(req, res) {
+    res.render("directions");
   });
 
   app.get("/add", function(req, res) {

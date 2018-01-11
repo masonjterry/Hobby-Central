@@ -9,54 +9,15 @@
       <h2>What would you like to learn today</h2>
     </div>
   </div>
-  <!-- Category Selection -->
-  <div id="dropdown1" class="row">
-    <div class="input-field category col s6 offset-s3">
-      <select id="category" onchange="selectCategory()">
-        {{#each categories}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
-      </select>
-    </div>
-  </div>
-  <!-- Hobby List Selection -->
-  <div id="dropdown2" class="row">
-    <div class="input-field hobby-list col s6 offset-s3">
-      <div id="hobby-list-placeholder"></div>
-      <select id="hobby-list" onchange="selectFromHobbyList()">
-        {{#each categories}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
-      </select>
-    </div>
-  </div>
-  <!-- Directions -->
-  <div id="directions" class="row">
-    <div class="col s10 offset-s1">
-      <!-- Display directions here -->
-      <div class="list-directions">
-        {{#each hobbies}}
-        <div class="row">
-          <div class="col s6">
-            <div id="materialsDiv">Materials</div>
-            <div class="materials">{{this.materials}}</div>
-          </div>
-          <div class="col s6">
-            <div id="instructionsDiv">Instructions</div>
-            <div class="instructions">{{this.instructions}}</div>
-          </div>
-        </div>
-        <div class ="row">
-          <div class="col s6">
-            <div id="imagesDiv">Images</div>
-            <div class="images">{{this.images}}</div>
-          </div>
-          <div class="col s6">
-            <div id="videosDiv">Videos</div>
-            <iframe class="videos" src="{{this.videos}}"></iframe>
-          </div>
-        </div>
-        {{/each}}
+  <div class="slide">
+    <!-- Category Selection -->
+    <div id="dropdown1" class="row">
+      <div class="input-field category col s6 offset-s3">
+        <select id="category" onchange="selectCategory()">
+          {{#each categories}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
       </div>
     </div>
   </div>

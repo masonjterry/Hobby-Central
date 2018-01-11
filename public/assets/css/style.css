@@ -73,6 +73,15 @@ button {
   background-color: white;
 }
 
+.list-btn {
+  background-color: white;
+  color: #42a5f5;
+}
+
+.list-btn:hover {
+  background-color: white;
+}
+
 #category-name,
 #hobby-name,
 #materials,
