@@ -13,9 +13,10 @@
     <!-- Category Selection -->
     <div id="dropdown1" class="row">
       <div class="input-field category col s6 offset-s3">
-        <div id="category" onchange="selectCategory()">
+        <div id="category">
+          <p id="cat">Categories</p>
           {{#each categories}}
-            <button class="btn z-depth-5" value="{{this}}">{{this}}</button>
+            <button class="btn z-depth-5 cat-list" value="{{this}}">{{this}}</button>
           {{/each}}
         </div>
       </div>
