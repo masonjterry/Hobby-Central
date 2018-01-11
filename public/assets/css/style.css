@@ -76,14 +76,14 @@ button {
 
 .btn:hover {
   background-color: white;
-} */
+}
 
 #category-name,
 #hobby-name,
-#materials,
-#steps,
-#images,
-#videos,
+#materials-input,
+#steps-input,
+#images-input,
+#videos-input,
 #username,
 #password,
 #email,
