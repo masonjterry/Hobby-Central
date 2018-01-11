@@ -5,15 +5,10 @@ $(document).ready(function(){
 
   $("#create-user-btn").on("click", function() {
     let firstName = $("#firstName").val().trim();
-    console.log("new firstName", firstName);
     let lastName = $("#lastName").val().trim();
-    console.log("new lastName", lastName);
     let email = $("#email").val().trim();
-    console.log("new email", email);
     let username = $("#username").val().trim();
-    console.log("new username", username);
     let password = $("#password").val().trim();
-    console.log("new password", password);
     if (verify(lastName, firstName, email, username, password)) {
 
       let newUser = {
@@ -77,7 +72,7 @@ $(document).ready(function(){
 
     if (password.length >= 6) {
       for (var i = 0; i < password.length; i++) {
-        if (password[i] === "!" || password[i] === "?" || password[i] === "." || password[i] === "$") {
+        if (password[i] === "!" || password[i] === "?" || password[i] === "%" || password[i] === "$" password[i] === "@" || password[i] === "#" || password[i] === "&") {
           console.log("password is valid");
           verifyBool = true;
         } else {
@@ -88,6 +83,7 @@ $(document).ready(function(){
     } else {
       console.log("password is invalid");
       verifyBool = false;
+      alert("username or password is invalid");
     }
     return verifyBool;
   }

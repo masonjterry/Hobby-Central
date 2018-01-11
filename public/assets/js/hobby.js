@@ -17,7 +17,6 @@ let category = localStorage.getItem("category").toLowerCase();
 $.get("/api/hobby", function(data){
   for (let i = 0; i < data.length; i++) {
     if (data[i].category.toLowerCase() == category.toLowerCase()) {
-      console.log(data[i].name);
       $("#hobby-list").append("<button id=" + data[i].id + " class=\"btn list-btn\">" + data[i].name + "</button>");
     }
   }
@@ -25,7 +24,6 @@ $.get("/api/hobby", function(data){
   $(".list-btn").on("click", function(e) {
     e.preventDefault()
     let click = e.target.id
-    console.log(click);
     localStorage.setItem("id", click);
     selectFromHobbyList();
     location.href="/directions";

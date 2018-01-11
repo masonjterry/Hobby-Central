@@ -13,15 +13,10 @@ $(document).ready(function(){
 });
 
 let id = localStorage.getItem("id");
-console.log("id", id);
 
 $.get("/api/directions", function(data){
   for (let i = 0; i < data.length; i++) {
     if (data[i].id == id) {
-      console.log(data[i].materials);
-      console.log(data[i].instructions);
-      console.log(data[i].images);
-      console.log(data[i].videos);
       $("#materials-div").text(data[i].materials);
       $("#instructions-div").text(data[i].instructions);
       $("#images-div").attr("src", data[i].images);

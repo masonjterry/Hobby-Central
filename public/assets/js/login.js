@@ -12,9 +12,7 @@ $(document).ready(function(){
 
   $("#login-btn").on("click", function() {
     let username = $("#username").val().trim();
-    console.log("username", username);
     let password = $("#password").val().trim();
-    console.log("password", password);
 
     let user = {
       username: username,
