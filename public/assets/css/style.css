@@ -20,6 +20,10 @@ h1, h2 {
   text-shadow: 2px 2px #777;
 }
 
+img {
+  max-width: 200px;
+}
+
 ul.dropdown-content.select-dropdown li span {
     color: #42a5f5;
 }
@@ -72,7 +76,7 @@ button {
 
 .btn:hover {
   background-color: white;
-}
+} */
 
 #category-name,
 #hobby-name,

@@ -13,7 +13,7 @@ $(document).ready(function(){
   $("#login-btn").on("click", function() {
     let username = $("#username").val().trim();
     let password = $("#password").val().trim();
-    
+
     let user = {
       username: username,
       password: password

@@ -19,8 +19,8 @@ $.get("/api/directions", function(data){
     if (data[i].id == id) {
       $("#materials-div").text(data[i].materials);
       $("#instructions-div").text(data[i].instructions);
-      $("#images-div").text(data[i].images);
-      $("#videos-div").text(data[i].videos);
+      $("#images-div").attr("src", data[i].images);
+      $("#videos-div").attr("src", data[i].videos);
     }
   }
 
