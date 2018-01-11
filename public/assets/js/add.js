@@ -1,3 +1,8 @@
+//=======================================
+// this add.js file is the page listener
+// for button calls
+//=======================================
+
 $(document).ready(function(){
 
   $(".button-collapse").sideNav();
@@ -13,6 +18,13 @@ $(document).ready(function(){
   //   // showCategoryInput.style.display = "none";
   //   // showHobbyInput.style.display = "block";
   // });
+//=======================================
+//
+// this below is the function that is
+// executed when the submit-hobby 
+// button is clicked under create a 
+// hobby page
+//=======================================
 
   $("#submit-hobby").on("click", function(e) {
     e.preventDefault();
@@ -27,9 +39,17 @@ $(document).ready(function(){
     console.log("images", images);
     let videos = $("#videos").val().trim();
     console.log("videos", videos);
+//=======================================
+// user check below
+// check if the user is logged in by 
+// checking the username variable in
+// the localStorage data that's been
+// saved when the user logged in
+//=======================================
 
     if (localStorage.getItem("username") != null) {
-
+// if username is not empty, then create this
+// data set that will be passed onto sequelize
       let newHobby = {
         category: category,
         name: hobbyName,
@@ -39,7 +59,7 @@ $(document).ready(function(){
         images: images,
         videos: videos
       }
-
+// send the ajax data set and do POST method
       $.ajax({
         url: "/api/hobby",
         method: "POST",
@@ -47,9 +67,11 @@ $(document).ready(function(){
       });
 
     } else {
+// else if the username is not in the 
+// localstorage variables , prompt
+// the user to login
       alert("please log in");
     }
-
 
   });
 
@@ -61,6 +83,11 @@ $(document).ready(function(){
 // showHobbyInput.style.display = "none";
 // let showCategoryInput = document.getElementById("category-input");
 // showCategoryInput.style.display = "none";
+
+
+//=======================================
+// function that 
+//=======================================
 
 function selectCategory() {
   category = document.getElementById("category").value;

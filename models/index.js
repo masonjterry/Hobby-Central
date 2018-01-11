@@ -1,5 +1,9 @@
-"use strict";
 
+
+"use strict";
+// ============================================
+// Dependencies
+// ============================================
 let fs        = require("fs");
 let path      = require("path");
 let Sequelize = require("sequelize");
@@ -8,6 +12,11 @@ let env       = process.env.NODE_ENV || "development";
 let config    = require(__dirname + "/../config/config.json")[env];
 let db        = {};
 
+// ============================================
+// Run / Construct the database using sequelize 
+// using the config.json file for configuration
+// taking in username and password
+// ============================================
 if (config.use_env_letiable) {
   var sequelize = new Sequelize(process.env[config.use_env_letiable], config);
 } else {

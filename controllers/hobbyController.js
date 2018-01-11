@@ -1,6 +1,17 @@
+//=======================================
+// require models for presentation layer
+//=======================================
+
 var db = require("../models");
 
 module.exports = function(app) {
+
+//=======================================
+// Routes declaration
+// This section tells us when the user
+// goes whatever is passed on the 
+// url or path
+//=======================================
 
   app.get("/", function(req, res) {
     db.Hobbies.findAll({}).then(function(data){
@@ -66,6 +77,10 @@ module.exports = function(app) {
     })
   });
 
+// ====================================
+//
+//
+// ====================================
   app.post("/api/hobby", function(req, res) {
     db.Hobbies.create({
       category: req.body.category,
