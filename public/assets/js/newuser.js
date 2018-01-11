@@ -72,7 +72,7 @@ $(document).ready(function(){
 
     if (password.length >= 6) {
       for (var i = 0; i < password.length; i++) {
-        if (password[i] === "!" || password[i] === "?" || password[i] === "%" || password[i] === "$" password[i] === "@" || password[i] === "#" || password[i] === "&") {
+        if (password[i] === "!" || password[i] === "?" || password[i] === "&" || password[i] === "$" password[i] === "@" ||  password[i] === "#" ||  password[i] === "%") {
           console.log("password is valid");
           verifyBool = true;
         } else {
@@ -83,7 +83,7 @@ $(document).ready(function(){
     } else {
       console.log("password is invalid");
       verifyBool = false;
-      alert("username or password is invalid");
+      alert("username and/or password is invalis");
     }
     return verifyBool;
   }
