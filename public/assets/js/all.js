@@ -12,12 +12,13 @@ $(document).ready(function(){
 
 });
 
-function selectCategory() {
-  let category = document.getElementById("category").value;
+$("button").on("click", function(e) {
+  e.preventDefault();
+  let category = e.target.value;
   localStorage.setItem("category", category);
   location.href="/hobby";
 
-}
+});
 
 let username = localStorage.getItem("username");
 
