@@ -28,21 +28,13 @@ $.get("/api/hobby", function(data){
     console.log(click);
     localStorage.setItem("id", click);
     selectFromHobbyList();
-
+    location.href="/directions";
   });
 
 });
 
-let showHobbyList = document.getElementById("dropdown2");
-showHobbyList.style.display = "block";
-let showDirections = document.getElementById("directions");
-showDirections.style.display = "none";
-
-
 function selectFromHobbyList() {
   let hobbyList = document.getElementById("hobby-list").value;
-  showHobbyList.style.display = "none";
-  showDirections.style.display = "block";
   localStorage.removeItem("category");
 }
 

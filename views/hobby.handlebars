@@ -17,36 +17,6 @@
       </div>
     </div>
   </div>
-  <!-- Directions -->
-  <div id="directions" class="row">
-    <div class="col s10 offset-s1">
-      <!-- Display directions here -->
-      <div class="list-directions">
-        {{#each hobbies}}
-        <div class="row">
-          <div class="col s6">
-            <div id="materialsDiv">Materials</div>
-            <div class="materials">{{this.materials}}</div>
-          </div>
-          <div class="col s6">
-            <div id="instructionsDiv">Instructions</div>
-            <div class="instructions">{{this.instructions}}</div>
-          </div>
-        </div>
-        <div class ="row">
-          <div class="col s6">
-            <div id="imagesDiv">Images</div>
-            <div class="images">{{this.images}}</div>
-          </div>
-          <div class="col s6">
-            <div id="videosDiv">Videos</div>
-            <iframe class="videos" src="{{this.videos}}"></iframe>
-          </div>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-  </div>
 </div>
 <!-- JavaScript -->
 <script type="text/javascript" src="assets/js/hobby.js"></script>

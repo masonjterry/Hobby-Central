@@ -27,17 +27,14 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/directions", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data) {
+        res.json(data);
+    });
+  });
+
   app.get("/hobby", function(req, res) {
     db.Hobbies.findAll({}).then(function(data){
-      console.log("data", data[0].name);
-      // let hobbyList = {};
-      //
-      // data.forEach(function(hobby) {
-      //   hobbyList[toTitleCase(hobby.name)] = true;
-      // });
-      // console.log("hobbyList", hobbyList);
-      //
-      // res.render("hobby", {hobbies: Object.keys(hobbyList)} );
       res.render("hobby", {hobbies: data} );
 
     });
@@ -65,9 +62,9 @@ module.exports = function(app) {
     res.render("login");
   });
 
-  // app.get("/hobby", function(req, res) {
-  //   res.render("hobby");
-  // });
+  app.get("/directions", function(req, res) {
+    res.render("directions");
+  });
 
   app.get("/add", function(req, res) {
     res.render("add");
