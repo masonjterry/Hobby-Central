@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 });
 
-$("button").on("click", function(e) {
+$(".btn").on("click", function(e) {
   e.preventDefault();
   let category = e.target.value;
   localStorage.setItem("category", category);

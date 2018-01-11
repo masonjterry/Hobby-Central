@@ -69,30 +69,12 @@ button {
   margin: 5px;
 }
 
-/* #login-btn,
-#new-user-btn,
-#submit-hobby,
-#submit-category,
-#create-user-btn {
-  background-color: white;
-} */
-
 .btn {
   background-color: white;
   color: #42a5f5;
-
 }
 
 .btn:hover {
-  background-color: white;
-}
-
-/* .list-btn {
-  background-color: white;
-  color: #42a5f5;
-}
-
-.list-btn:hover {
   background-color: white;
 } */
 

@@ -21,6 +21,7 @@ $(document).ready(function(){
     let images = $("#images").val().trim();
     let videos = $("#videos").val().trim();
 
+
     if (localStorage.getItem("username") != null) {
 
       let newHobby = {
@@ -50,17 +51,17 @@ $(document).ready(function(){
 
 });
 
-function selectCategory() {
-  category = document.getElementById("category").value;
-
-  if (category !== "add") {
-    showCategoryList.style.display = "none";
-    showHobbyInput.style.display = "block";
-  } else {
-    showCategoryInput.style.display = "block";
-  }
-
-}
+// function selectCategory() {
+//   category = document.getElementById("category").value;
+//
+//   if (category !== "add") {
+//     showCategoryList.style.display = "none";
+//     showHobbyInput.style.display = "block";
+//   } else {
+//     showCategoryInput.style.display = "block";
+//   }
+//
+// }
 
 let username = localStorage.getItem("username");
 
