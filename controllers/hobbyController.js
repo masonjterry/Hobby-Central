@@ -1,19 +1,52 @@
-var db = require("../models");
+let db = require("../models");
+let Sequelize = require('sequelize');
+
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
 
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
     db.Hobbies.findAll({}).then(function(data){
-      res.render("all", {hobbies: data} );
+      let categories = {};
+
+      data.forEach(function(category) {
+        categories[toTitleCase(category.category)] = true;
+      });
+
+      res.render("all", {categories: Object.keys(categories)} );
+      //res.render("all", {hobbies: data} );
+
     });
   });
 
-  // app.get("/login", function(req, res) {
-  //   db.User.findAll({}).then(function(data) {
+  app.get("/api/hobby", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data) {
+        res.json(data);
+    });
+  });
+
+  app.get("/api/directions", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data) {
+        res.json(data);
+    });
+  });
+
+  app.get("/hobby", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data){
+      res.render("hobby", {hobbies: data} );
+
+    });
+  });
+
+  // app.get("/api/category/:category", function(req, res) {
+  //   db.Hobbies.findAll({}).then(function(data) {
   //     console.log(data);
-  //     res.render("login", { user: data })
+  //     res.render("hobby", {hobbies: data});
   //   });
   // });
+
 
   app.post("/api/users/verify", function(req, res) {
     db.User.findAll({}).then(function(data) {
@@ -25,24 +58,12 @@ module.exports = function(app) {
     });
   });
 
-  // app.get("/:category", function(req, res) {
-  //   db.Hobbies.findAll({
-  //     where: {
-  //       category: req.params
-  //     }
-  //   }).then(function(data) {
-  //     res.render("index", { categories: data })
-  //   });
-  // });
-
-  app.get("/api/:id", function(req, res) {
-    db.Hobbies.findAll({}).then(function(data) {
-      res.json(data);
-    });
-  });
-
   app.get("/login", function(req, res) {
     res.render("login");
+  });
+
+  app.get("/directions", function(req, res) {
+    res.render("directions");
   });
 
   app.get("/add", function(req, res) {
@@ -62,7 +83,7 @@ module.exports = function(app) {
       password: req.body.password
     }).then(function(data) {
       res.json(data);
-    })
+    });
   });
 
   app.post("/api/hobby", function(req, res) {
@@ -76,6 +97,8 @@ module.exports = function(app) {
       videos: req.body.videoss
     }).then(function(data) {
       res.json(data);
-    })
+    });
+
   });
-}
+
+  }

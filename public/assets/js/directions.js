@@ -12,11 +12,17 @@ $(document).ready(function(){
 
 });
 
-$("button").on("click", function(e) {
-  e.preventDefault();
-  let category = e.target.value;
-  localStorage.setItem("category", category);
-  location.href="/hobby";
+let id = localStorage.getItem("id");
+
+$.get("/api/directions", function(data){
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].id == id) {
+      $("#materials-div").text(data[i].materials);
+      $("#instructions-div").text(data[i].instructions);
+      $("#images-div").attr("src", data[i].images);
+      $("#videos-div").attr("src", data[i].videos);
+    }
+  }
 
 });
 

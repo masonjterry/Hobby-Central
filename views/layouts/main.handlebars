@@ -19,25 +19,27 @@
 
 </head>
 <body>
-  <div class="slide">
-  <!-- Navbar -->
+    <!-- Navbar -->
     <nav>
       <div class="nav-wrapper white">
-        <a href="http://localhost:8080/" class="brand-logo light-blue-text" id="logo">Hobby Central</a>
+        <a href="/" class="brand-logo light-blue-text" id="logo">Hobby Central</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons light-blue-text">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="http://localhost:8080/login" class="light-blue-text">Login</a></li>
-          <li><a href="http://localhost:8080/" class="light-blue-text">Find A New Hobby</a></li>
-          <li><a href="http://localhost:8080/add" class="light-blue-text">Add A Hobby</a></li>
+          <li><a href="/login" class="light-blue-text" id="login">Login</a></li>
+          <li><a href="/login" class="light-blue-text" id="logout"></a></li>
+          <li><a href="/" class="light-blue-text">Find A New Hobby</a></li>
+          <li><a href="/add" class="light-blue-text" id="add-hobby"></a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="http://localhost:8080/login" class="light-blue-text">Login</a></li>
-          <li><a href="http://localhost:8080/" class="light-blue-text">Find A New Hobby</a></li>
-          <li><a href="http://localhost:8080/add" class="light-blue-text">Add A Hobby</a></li>
+          <li><a href="/login" class="light-blue-text" id="mobile-login">Login</a></li>
+          <li><a href="/login" class="light-blue-text" id="logout-mobile"></a></li>
+          <li><a href="/" class="light-blue-text">Find A New Hobby</a></li>
+          <li><a href="/add" class="light-blue-text" id="add-hobby-mobile"></a></li>
         </ul>
       </div>
     </nav>
-    {{{ body }}}
-  </div>
+    <div class="body">
+      {{{ body }}}
+    </div>
 </body>
 </html>

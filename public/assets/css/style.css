@@ -20,6 +20,10 @@ h1, h2 {
   text-shadow: 2px 2px #777;
 }
 
+img {
+  max-width: 200px;
+}
+
 ul.dropdown-content.select-dropdown li span {
     color: #42a5f5;
 }
@@ -59,20 +63,38 @@ h2 {
   border: solid 2px #555;
   border-radius: 10px;
   box-shadow: 2px 2px #777;
-  height: 500px;
-}
+  }
 
 button {
   margin: 5px;
 }
 
-#login-btn,
+/* #login-btn,
 #new-user-btn,
 #submit-hobby,
 #submit-category,
 #create-user-btn {
   background-color: white;
+} */
+
+.btn {
+  background-color: white;
+  color: #42a5f5;
+
 }
+
+.btn:hover {
+  background-color: white;
+}
+
+/* .list-btn {
+  background-color: white;
+  color: #42a5f5;
+}
+
+.list-btn:hover {
+  background-color: white;
+} */
 
 #category-name,
 #hobby-name,
@@ -85,8 +107,18 @@ button {
 #email,
 #firstName,
 #lastName {
-     background-color: white;
-     border-radius: 10px;
-     box-shadow: 2px 2px 2px;
-     padding: 10px;
-   }
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px;
+  padding: 10px;
+}
+
+#imagesDiv,
+#materialsDiv,
+#videosDiv,
+#instructionsDiv {
+  font-size: 2rem;
+  color: #42a5f5;
+  border-bottom: solid 2px #aaa;
+  margin: 5px;
+}
