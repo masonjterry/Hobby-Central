@@ -9,21 +9,12 @@
       <h2>What would you like to learn today</h2>
     </div>
   </div>
-  <!-- Category Selection -->
-  <div id="dropdown1" class="row">
-    <div class="input-field category col s6 offset-s3">
-
-    </div>
-  </div>
   <!-- Hobby List Selection -->
   <div id="dropdown2" class="row">
     <div class="input-field hobby-list col s6 offset-s3">
-      <div id="hobby-list-placeholder"></div>
-      <select id="hobby-list" onchange="selectCategory()">
-        {{#each hobbies}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
-      </select>
+      <div id="hobby-list" onchange="selectFromHobbyList()">
+        <!-- Buttons go here -->
+      </div>
     </div>
   </div>
   <!-- Directions -->
@@ -58,4 +49,4 @@
   </div>
 </div>
 <!-- JavaScript -->
-<script type="text/javascript" src="assets/js/all.js"></script>
+<script type="text/javascript" src="assets/js/hobby.js"></script>

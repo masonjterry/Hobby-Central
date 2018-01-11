@@ -12,18 +12,38 @@ $(document).ready(function(){
 
 });
 
-let showCategoryList = document.getElementById("dropdown1");
-showCategoryList.style.display = "block";
+let category = localStorage.getItem("category");
+
+$.get("/api/hobby", function(data){
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].category === category) {
+      console.log(data[i].name);
+      $("#hobby-list").append("<button id=" + data[i].id + " class=\"btn list-btn\">" + data[i].name + "</button>");
+    }
+  }
+
+  $(".list-btn").on("click", function(e) {
+    e.preventDefault()
+    let click = e.target.id
+    console.log(click);
+    localStorage.setItem("id", click);
+    selectFromHobbyList();
+
+  });
+
+});
+
 let showHobbyList = document.getElementById("dropdown2");
-showHobbyList.style.display = "none";
+showHobbyList.style.display = "block";
 let showDirections = document.getElementById("directions");
 showDirections.style.display = "none";
 
-function selectCategory() {
-  let category = document.getElementById("category").value;
-  localStorage.setItem("category", category);
-  location.href="/hobby";
 
+function selectFromHobbyList() {
+  let hobbyList = document.getElementById("hobby-list").value;
+  showHobbyList.style.display = "none";
+  showDirections.style.display = "block";
+  localStorage.removeItem("category");
 }
 
 let username = localStorage.getItem("username");
