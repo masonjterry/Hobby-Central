@@ -12,11 +12,11 @@ $(document).ready(function(){
 
 });
 
-let category = localStorage.getItem("category");
+let category = localStorage.getItem("category").toLowerCase();
 
 $.get("/api/hobby", function(data){
   for (let i = 0; i < data.length; i++) {
-    if (data[i].category === category) {
+    if (data[i].category.toLowerCase() == category.toLowerCase()) {
       console.log(data[i].name);
       $("#hobby-list").append("<button id=" + data[i].id + " class=\"btn list-btn\">" + data[i].name + "</button>");
     }

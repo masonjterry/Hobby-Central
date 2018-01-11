@@ -13,11 +13,11 @@
     <!-- Category Selection -->
     <div id="dropdown1" class="row">
       <div class="input-field category col s6 offset-s3">
-        <select id="category" onchange="selectCategory()">
+        <div id="category" onchange="selectCategory()">
           {{#each categories}}
-            <option value="{{this}}">{{this}}</option>
+            <button class="btn" value="{{this}}">{{this}}</button>
           {{/each}}
-        </select>
+        </div>
       </div>
     </div>
   </div>
