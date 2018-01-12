@@ -16,7 +16,6 @@ module.exports = function(app) {
       });
 
       res.render("all", {categories: Object.keys(categories)} );
-      //res.render("all", {hobbies: data} );
 
     });
   });
@@ -40,14 +39,6 @@ module.exports = function(app) {
     });
   });
 
-  // app.get("/api/category/:category", function(req, res) {
-  //   db.Hobbies.findAll({}).then(function(data) {
-  //     console.log(data);
-  //     res.render("hobby", {hobbies: data});
-  //   });
-  // });
-
-
   app.post("/api/users/verify", function(req, res) {
     db.User.findAll({}).then(function(data) {
       for (var i = 0; i < data.length; i++) {
@@ -55,6 +46,7 @@ module.exports = function(app) {
           res.json(true);
         }
       }
+      res.json(false);
     });
   });
 
@@ -94,7 +86,7 @@ module.exports = function(app) {
       materials: req.body.materials,
       instructions: req.body.instructions,
       images: req.body.images,
-      videos: req.body.videoss
+      videos: req.body.videos
     }).then(function(data) {
       res.json(data);
     });

@@ -27,10 +27,9 @@ $(document).ready(function(){
 
       });
 
-      localStorage.clear();
-      localStorage.setItem("username", username);
-
     }
+    localStorage.clear();
+    localStorage.setItem("username", username);
     location.href="/";
   });
 
@@ -77,7 +76,7 @@ $(document).ready(function(){
       }
     } else {
       verifyBool = false;
-      alert("username and/or password is invalid");
+      alert("Please make sure all fields are filled out correctly.");
     }
     return verifyBool;
   }

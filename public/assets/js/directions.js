@@ -20,8 +20,14 @@ $.get("/api/directions", function(data){
     if (data[i].id == id) {
       $("#materials-div").text(data[i].materials);
       $("#instructions-div").text(data[i].instructions);
-      $("#images-div").attr("src", data[i].images);
-      $("#videos-div").attr("src", data[i].videos);
+      if (data[i].images != "" || data[i].images != "") {
+        $("#img-div1").append("<img id=\"images-div\" class=\"responsive-img\" src=" + data[i].images + ">");
+        $("#img-div2").append("<div id=\"imagesDiv\">Images</div>");
+      }
+      if (data[i].videos != "" && data[i].videos != null) {
+        $("#vid-div2").append("<div id=\"videosDiv\">Videos</div>");
+        $("#vid-div1").append("<iframe id=\"video-div\" src=" + data[i].videos + "></iframe>");
+      }
     }
   }
 

@@ -24,16 +24,6 @@ img {
   max-width: 200px;
 }
 
-/* .hobby-selection {
-  max-width: auto;
-  background-color: white;
-  color: #42a5f5;
-  border-radius: 15px;
-  padding: 10px;
-  margin: 20px;
-  cursor: pointer;
-} */
-
 .slide {
   animation-duration: 1s;
   animation-name: slide-left;
@@ -75,7 +65,18 @@ h2,
   }
 
 button {
-  margin: 5px;
+  margin: 10px;
+  width: 100%;
+}
+
+#instructions-div,
+#materials-div {
+  color: #444;
+  font-size: 1.5rem;
+}
+
+iframe {
+  max-width: 100%;
 }
 
 .btn {

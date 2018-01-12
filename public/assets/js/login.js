@@ -32,11 +32,12 @@ $(document).ready(function(){
       if (result) {
         localStorage.clear();
         localStorage.setItem("username", username);
+        location.href="/";
       } else {
-        aler("username and password to not match");
+        alert("username and password do not match");
+        location.href="/login";
       }
     });
-    location.href="/";
   });
 
 });
