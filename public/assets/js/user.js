@@ -10,6 +10,15 @@ $(document).ready(function(){
     localStorage.clear();
   });
 
+  let username = localStorage.getItem("username");
+
+  $.get("/api/users/profile", function(data){
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].username == username) {
+        $("#user-info").append(toTitleCase(data[i].firstName) + " " + toTitleCase(data[i].lastName));
+      }
+    }
+  });
 
 });
 
@@ -25,4 +34,8 @@ if (username != null) {
   $("#login").text("Logout");
   $("#login-mobile").text("Logout");
 
+}
+
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }

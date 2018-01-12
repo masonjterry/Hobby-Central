@@ -51,11 +51,15 @@ h2,
   font-size: 1.5rem;
 }
 
+#user-info {
+  margin-top: 10px;
+}
+
 .category, .hobby-list, .hobby {
   color: #ffffff;
 }
 
-.list-directions, .add-div {
+.style-background, .add-div {
   color: #42a5f5;
   background-color: #ffffff;
   text-align: center;
