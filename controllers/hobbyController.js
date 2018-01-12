@@ -54,6 +54,11 @@ module.exports = function(app) {
     res.render("login");
   });
 
+  app.get("/user", function(req, res) {
+    res.render("user");
+  });
+
+
   app.get("/directions", function(req, res) {
     res.render("directions");
   });
