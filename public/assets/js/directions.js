@@ -21,6 +21,12 @@ $.get("/api/directions", function(data){
       $("#instructions-div").text(data[i].instructions);
       $("#images-div").attr("src", data[i].images);
       $("#videos-div").attr("src", data[i].videos);
+      //split data[i].materials by ","
+      //create a slick carousel
+      //for loop through the new array
+        //make an ajax call to walmart api for item info.
+        //create a slick button and create an on click event that takes user to walmart store page.
+      //push content to directions.handelbars
     }
   }
 
