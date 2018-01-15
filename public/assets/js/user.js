@@ -16,9 +16,6 @@ $(document).ready(function(){
     for (let i = 0; i < data.length; i++) {
       if (data[i].username == username) {
         $("#user-info").append(toTitleCase(data[i].firstName) + " " + toTitleCase(data[i].lastName));
-        // hobbies added
-        // hobbies liked
-        // 
       }
     }
   });
@@ -26,6 +23,12 @@ $(document).ready(function(){
 });
 
 let username = localStorage.getItem("username");
+
+$.post("/api/users/" + username, function(data) {
+  console.log(data);
+}).then(function(result) {
+  console.log(result);
+});
 
 if (username != null) {
 

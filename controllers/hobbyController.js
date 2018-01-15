@@ -15,7 +15,7 @@ module.exports = function(app) {
         categories[toTitleCase(category.category)] = true;
       });
 
-      res.render("index", {categories: Object.keys(categories)} );
+      res.render("all", {categories: Object.keys(categories)} );
 
     });
   });
@@ -53,7 +53,18 @@ module.exports = function(app) {
   app.get("/api/users/profile", function(req, res) {
     db.User.findAll({}).then(function(data) {
         res.json(data);
-      })
+      });
+  });
+
+  app.post("/api/users/:username", function(req, res) {
+    console.log(req.params.username)
+    db.Hobbies.findAll({
+      where: {
+        user: req.params.username
+      }
+    }).then(function(data) {
+      res.send("user", { hobbies: data });
+    });
   });
 
   app.get("/login", function(req, res) {
