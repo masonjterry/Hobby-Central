@@ -16,6 +16,9 @@ $(document).ready(function(){
     for (let i = 0; i < data.length; i++) {
       if (data[i].username == username) {
         $("#user-info").append(toTitleCase(data[i].firstName) + " " + toTitleCase(data[i].lastName));
+        // hobbies added
+        // hobbies liked
+        // 
       }
     }
   });
