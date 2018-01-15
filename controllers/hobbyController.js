@@ -15,7 +15,7 @@ module.exports = function(app) {
         categories[toTitleCase(category.category)] = true;
       });
 
-      res.render("all", {categories: Object.keys(categories)} );
+      res.render("index", {categories: Object.keys(categories)} );
 
     });
   });
