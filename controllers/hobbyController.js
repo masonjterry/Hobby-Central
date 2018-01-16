@@ -56,14 +56,17 @@ module.exports = function(app) {
       });
   });
 
-  app.post("/api/users/:username", function(req, res) {
-    console.log(req.params.username)
-    db.Hobbies.findAll({
-      where: {
-        user: req.params.username
-      }
+  app.get("/api/users/added", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data) {
+      res.json(data);
+    });
+  });
+
+  app.post("/api/users/:username/:like", function(req, res) {
+    db.User.update({
+
     }).then(function(data) {
-      res.send("user", { hobbies: data });
+
     });
   });
 
@@ -94,7 +97,8 @@ module.exports = function(app) {
       lastName: req.body.lastName,
       email: req.body.email,
       username: req.body.username,
-      password: req.body.password
+      password: req.body.password,
+      likes: req.body.likes
     }).then(function(data) {
       res.json(data);
     });

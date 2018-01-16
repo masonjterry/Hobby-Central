@@ -48,7 +48,7 @@ h2,
 #cat-name,
 #cat,
 #dir {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 #user-info {
@@ -117,4 +117,18 @@ iframe {
   color: #42a5f5;
   border-bottom: solid 2px #aaa;
   margin: 5px;
+}
+
+.profile-buttons {
+  background-color: #42a5f5;
+  color: white;
+}
+
+.profile-buttons:hover {
+  background-color: #42a5f5;
+}
+
+#user-info {
+  padding: 20px;
+  font-size: 2rem;
 }

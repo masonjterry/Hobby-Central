@@ -15,9 +15,9 @@ $(document).ready(function(){
 let id = localStorage.getItem("id");
 
 $.get("/api/directions", function(data){
-  $("#dir").text(localStorage.getItem("directions"));
   for (let i = 0; i < data.length; i++) {
     if (data[i].id == id) {
+      $("#dir").text(data[i].name);
       $("#materials-div").text(data[i].materials);
       $("#instructions-div").text(data[i].instructions);
       if (data[i].images != "" || data[i].images != "") {
@@ -31,18 +31,24 @@ $.get("/api/directions", function(data){
     }
   }
 
+  let username = localStorage.getItem("username");
+
+  if (username != null) {
+
+    $("#user").text(username);
+    $("#mobile-user").text(username);
+    $("#welcome").text("Welcome back to Hobby Central, " + username)
+    $("#add-hobby").text("Add A Hobby");
+    $("#add-hobby-mobile").text("Add A Hobby");
+    $("#login").text("Logout");
+    $("#login-mobile").text("Logout");
+
+    $.post(`api/users/${username}/${like}`, function(data) {
+
+    });
+
+    $("#favorite-btn").append(`<button class="fav-btn btn">Favorite<i class="material-icons right">favorite</i></button>`);
+    // $("#favorite-btn").append(`<button class="fav-btn btn disabled">Favorited<i class="material-icons right">favorite</i></button>`);
+  }
+
 });
-
-let username = localStorage.getItem("username");
-
-if (username != null) {
-
-  $("#user").text(username);
-  $("#mobile-user").text(username);
-  $("#welcome").text("Welcome back to Hobby Central, " + username)
-  $("#add-hobby").text("Add A Hobby");
-  $("#add-hobby-mobile").text("Add A Hobby");
-  $("#login").text("Logout");
-  $("#login-mobile").text("Logout");
-
-}

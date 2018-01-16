@@ -20,15 +20,24 @@ $(document).ready(function(){
     }
   });
 
+  $.get("/api/users/added", function(data) {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].user == username) {
+        $("#hobbies-added").append(`<button class="btn profile-buttons" id="${data[i].id}">${data[i].name}</button>`);
+      }
+    }
+  });
+
+});
+
+$("#hobbies-added").on("click", function(e) {
+  e.preventDefault();
+  let click = e.target.id;
+  localStorage.setItem("id", click);
+  location.href="/directions";
 });
 
 let username = localStorage.getItem("username");
-
-$.post("/api/users/" + username, function(data) {
-  console.log(data);
-}).then(function(result) {
-  console.log(result);
-});
 
 if (username != null) {
 
@@ -39,7 +48,6 @@ if (username != null) {
   $("#add-hobby-mobile").text("Add A Hobby");
   $("#login").text("Logout");
   $("#login-mobile").text("Logout");
-
 }
 
 function toTitleCase(str) {

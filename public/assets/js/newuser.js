@@ -16,7 +16,8 @@ $(document).ready(function(){
         lastName: lastName,
         email: email,
         username: username,
-        password: password
+        password: password,
+        likes: ""
       }
 
       $.ajax({
