@@ -16,7 +16,6 @@ module.exports = function(app) {
       });
 
       res.render("all", {categories: Object.keys(categories)} );
-      //res.render("all", {hobbies: data} );
 
     });
   });
@@ -40,14 +39,6 @@ module.exports = function(app) {
     });
   });
 
-  // app.get("/api/category/:category", function(req, res) {
-  //   db.Hobbies.findAll({}).then(function(data) {
-  //     console.log(data);
-  //     res.render("hobby", {hobbies: data});
-  //   });
-  // });
-
-
   app.post("/api/users/verify", function(req, res) {
     db.User.findAll({}).then(function(data) {
       for (var i = 0; i < data.length; i++) {
@@ -55,12 +46,38 @@ module.exports = function(app) {
           res.json(true);
         }
       }
+      res.json(false);
+    });
+  });
+
+  app.get("/api/users/profile", function(req, res) {
+    db.User.findAll({}).then(function(data) {
+        res.json(data);
+      });
+  });
+
+  app.get("/api/users/added", function(req, res) {
+    db.Hobbies.findAll({}).then(function(data) {
+      res.json(data);
+    });
+  });
+
+  app.post("/api/users/:username/:like", function(req, res) {
+    db.User.update({
+
+    }).then(function(data) {
+
     });
   });
 
   app.get("/login", function(req, res) {
     res.render("login");
   });
+
+  app.get("/user", function(req, res) {
+    res.render("user");
+  });
+
 
   app.get("/directions", function(req, res) {
     res.render("directions");
@@ -80,7 +97,7 @@ module.exports = function(app) {
       lastName: req.body.lastName,
       email: req.body.email,
       username: req.body.username,
-      password: req.body.password
+      password: req.body.password,
     }).then(function(data) {
       res.json(data);
     });
@@ -94,7 +111,7 @@ module.exports = function(app) {
       materials: req.body.materials,
       instructions: req.body.instructions,
       images: req.body.images,
-      videos: req.body.videoss
+      videos: req.body.videos
     }).then(function(data) {
       res.json(data);
     });

@@ -13,7 +13,7 @@ body {
   margin-left: 10px;
 }
 
-h1, h2 {
+h1, h2, #cat-name, #cat, #dir {
   text-shadow: 1px 1px #333;
   text-align: center;
   color: #ffffff;
@@ -22,10 +22,6 @@ h1, h2 {
 
 img {
   max-width: 200px;
-}
-
-ul.dropdown-content.select-dropdown li span {
-    color: #42a5f5;
 }
 
 .slide {
@@ -48,15 +44,22 @@ h1 {
   font-size: 2.3rem;
 }
 
-h2 {
-  font-size: 1.5rem;
+h2,
+#cat-name,
+#cat,
+#dir {
+  font-size: 1.8rem;
+}
+
+#user-info {
+  margin-top: 10px;
 }
 
 .category, .hobby-list, .hobby {
   color: #ffffff;
 }
 
-.list-directions, .add-div {
+.style-background, .add-div {
   color: #42a5f5;
   background-color: #ffffff;
   text-align: center;
@@ -66,7 +69,18 @@ h2 {
   }
 
 button {
-  margin: 5px;
+  margin: 10px;
+  width: 100%;
+}
+
+#instructions-div,
+#materials-div {
+  color: #444;
+  font-size: 1.5rem;
+}
+
+iframe {
+  max-width: 100%;
 }
 
 .btn {
@@ -76,14 +90,14 @@ button {
 
 .btn:hover {
   background-color: white;
-} */
+}
 
 #category-name,
 #hobby-name,
-#materials,
-#steps,
-#images,
-#videos,
+#materials-input,
+#steps-input,
+#images-input,
+#videos-input,
 #username,
 #password,
 #email,
@@ -103,4 +117,18 @@ button {
   color: #42a5f5;
   border-bottom: solid 2px #aaa;
   margin: 5px;
+}
+
+.profile-buttons {
+  background-color: #42a5f5;
+  color: white;
+}
+
+.profile-buttons:hover {
+  background-color: #42a5f5;
+}
+
+#user-info {
+  padding: 20px;
+  font-size: 2rem;
 }

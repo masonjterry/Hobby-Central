@@ -14,16 +14,24 @@ $(document).ready(function(){
 
 let category = localStorage.getItem("category").toLowerCase();
 
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
+
 $.get("/api/hobby", function(data){
+  $("#cat-name").text("Category: " + toTitleCase(category));
   for (let i = 0; i < data.length; i++) {
     if (data[i].category.toLowerCase() == category.toLowerCase()) {
-      $("#hobby-list").append("<button id=" + data[i].id + " class=\"btn list-btn\">" + data[i].name + "</button>");
+      $("#hobby-list").append("<button id=" + data[i].id + " class=\"hobby-selection btn z-depth-5\">" + data[i].name + "</button>");
     }
   }
 
-  $(".list-btn").on("click", function(e) {
+  $(".hobby-selection").on("click", function(e) {
     e.preventDefault()
-    let click = e.target.id
+    let directions = e.target.textContent;
+    let click = e.target.id;
+    localStorage.setItem("directions", toTitleCase(directions));
     localStorage.setItem("id", click);
     selectFromHobbyList();
     location.href="/directions";
@@ -40,12 +48,12 @@ let username = localStorage.getItem("username");
 
 if (username != null) {
 
-  $("#login").text(username);
-  $("#mobile-login").text(username);
+  $("#user").text(username);
+  $("#mobile-user").text(username);
   $("#welcome").text("Welcome back to Hobby Central, " + username)
   $("#add-hobby").text("Add A Hobby");
   $("#add-hobby-mobile").text("Add A Hobby");
-  $("#logout").text("Logout");
-  $("#logout-mobile").text("Logout");
+  $("#login").text("Logout");
+  $("#login-mobile").text("Logout");
 
 }

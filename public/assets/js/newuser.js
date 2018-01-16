@@ -16,7 +16,8 @@ $(document).ready(function(){
         lastName: lastName,
         email: email,
         username: username,
-        password: password
+        password: password,
+        likes: ""
       }
 
       $.ajax({
@@ -27,10 +28,9 @@ $(document).ready(function(){
 
       });
 
-      localStorage.clear();
-      localStorage.setItem("username", username);
-
     }
+    localStorage.clear();
+    localStorage.setItem("username", username);
     location.href="/";
   });
 
@@ -40,7 +40,6 @@ $(document).ready(function(){
       console.log("lastname is too short");
       verifyBool = false;
     } else {
-      console.log("lastname is valid");
       verifyBool = true;
     }
 
@@ -48,13 +47,11 @@ $(document).ready(function(){
       console.log("firstname is too short");
       verifyBool = false;
     } else {
-      console.log("firstname is valid");
       verifyBool = true;
     }
 
     for (var i = 0; i < email.length; i++) {
       if (email[i] === "@") {
-        console.log("email is valid");
         verifyBool = true;
       } else {
         console.log("email is invalid");
@@ -66,14 +63,12 @@ $(document).ready(function(){
       console.log("username is too short");
       verifyBool = false;
     } else {
-      console.log("username is valid");
       verifyBool = true;
     }
 
     if (password.length >= 6) {
       for (var i = 0; i < password.length; i++) {
-        if (password[i] === "!" || password[i] === "?" || password[i] === "&" || password[i] === "$" password[i] === "@" ||  password[i] === "#" ||  password[i] === "%") {
-          console.log("password is valid");
+        if (password[i] === "!" || password[i] === "?" || password[i] === "&" || password[i] === "$" || password[i] === "@" ||  password[i] === "#" ||  password[i] === "%") {
           verifyBool = true;
         } else {
           console.log("password is invalid");
@@ -81,9 +76,8 @@ $(document).ready(function(){
         }
       }
     } else {
-      console.log("password is invalid");
       verifyBool = false;
-      alert("username and/or password is invalis");
+      alert("Please make sure all fields are filled out correctly.");
     }
     return verifyBool;
   }

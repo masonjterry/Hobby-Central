@@ -3,10 +3,10 @@ $(document).ready(function(){
   $(".button-collapse").sideNav();
   $("select").material_select();
 
-  $("#logout").on("click", function() {
+  $("#login").on("click", function() {
     localStorage.clear();
   });
-  $("#logout-mobile").on("click", function() {
+  $("#login-mobile").on("click", function() {
     localStorage.clear();
   });
 
@@ -32,11 +32,12 @@ $(document).ready(function(){
       if (result) {
         localStorage.clear();
         localStorage.setItem("username", username);
+        location.href="/";
       } else {
-        aler("username and password to not match");
+        alert("username and password do not match");
+        location.href="/login";
       }
     });
-    location.href="/";
   });
 
 });
@@ -45,12 +46,12 @@ let username = localStorage.getItem("username");
 
 if (username != null) {
 
-  $("#login").text(username);
-  $("#mobile-login").text(username);
+  $("#user").text(username);
+  $("#mobile-user").text(username);
   $("#welcome").text("Welcome back to Hobby Central, " + username)
   $("#add-hobby").text("Add A Hobby");
   $("#add-hobby-mobile").text("Add A Hobby");
-  $("#logout").text("Logout");
-  $("#logout-mobile").text("Logout");
+  $("#login").text("Logout");
+  $("#login-mobile").text("Logout");
 
 }
