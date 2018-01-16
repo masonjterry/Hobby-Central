@@ -12,10 +12,11 @@
   <div class="slide">
     <!-- Category Selection -->
     <div id="dropdown1" class="row">
-      <div class="input-field category col s6 offset-s3">
-        <div id="category" onchange="selectCategory()">
+      <div class="input-field category col s8 offset-s2">
+        <div id="category">
+          <p id="cat">Categories</p>
           {{#each categories}}
-            <button class="btn" value="{{this}}">{{this}}</button>
+            <button class="btn z-depth-5 cat-list" value="{{this}}">{{this}}</button>
           {{/each}}
         </div>
       </div>

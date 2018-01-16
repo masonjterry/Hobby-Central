@@ -16,10 +16,10 @@ $(document).ready(function(){
     e.preventDefault();
     category = $("#category-name").val().trim();
     let hobbyName = $("#hobby-name").val().trim();
-    let materials = $("#materials").val().trim();
-    let steps = $("#steps").val().trim();
-    let images = $("#images").val().trim();
-    let videos = $("#videos").val().trim();
+    let materials = $("#materials-input").val().trim();
+    let steps = $("#steps-input").val().trim();
+    let images = $("#images-input").val().trim();
+    let videos = $("#videos-input").val().trim();
 
 
     if (localStorage.getItem("username") != null) {
@@ -51,28 +51,16 @@ $(document).ready(function(){
 
 });
 
-// function selectCategory() {
-//   category = document.getElementById("category").value;
-//
-//   if (category !== "add") {
-//     showCategoryList.style.display = "none";
-//     showHobbyInput.style.display = "block";
-//   } else {
-//     showCategoryInput.style.display = "block";
-//   }
-//
-// }
-
 let username = localStorage.getItem("username");
 
 if (username != null) {
 
-  $("#login").text(username);
-  $("#mobile-login").text(username);
+  $("#user").text(username);
+  $("#mobile-user").text(username);
   $("#welcome").text("Welcome back to Hobby Central, " + username)
   $("#add-hobby").text("Add A Hobby");
   $("#add-hobby-mobile").text("Add A Hobby");
-  $("#logout").text("Logout");
-  $("#logout-mobile").text("Logout");
+  $("#login").text("Logout");
+  $("#login-mobile").text("Logout");
 
 }
