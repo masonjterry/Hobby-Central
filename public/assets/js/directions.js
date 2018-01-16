@@ -28,6 +28,13 @@ $.get("/api/directions", function(data){
         $("#vid-div2").append("<div id=\"videosDiv\">Videos</div>");
         $("#vid-div1").append("<iframe id=\"video-div\" src=" + data[i].videos + "></iframe>");
       }
+      //split data[i].materials by ","
+      //create a slick carousel
+      //for loop through the new array
+        //make an ajax call to walmart api for item info.
+        //create a slick button and create an on click event that takes user to walmart store page.
+      //push content to directions.handelbars
+
     }
   }
 
