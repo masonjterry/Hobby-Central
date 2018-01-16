@@ -98,7 +98,6 @@ module.exports = function(app) {
       email: req.body.email,
       username: req.body.username,
       password: req.body.password,
-      likes: req.body.likes
     }).then(function(data) {
       res.json(data);
     });
