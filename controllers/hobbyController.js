@@ -62,9 +62,14 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/users/:username/:like", function(req, res) {
+  app.post("/api/users/:username/:id", function(req, res) {
+    console.log(req.params);
     db.User.update({
-
+      favorites: req.params.id
+    }, {
+      where: {
+        id: req.params.id
+      }
     }).then(function(data) {
 
     });
@@ -98,6 +103,7 @@ module.exports = function(app) {
       email: req.body.email,
       username: req.body.username,
       password: req.body.password,
+      favorites: ""
     }).then(function(data) {
       res.json(data);
     });

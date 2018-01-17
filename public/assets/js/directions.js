@@ -76,10 +76,17 @@ $.get("/api/directions", function(data){
     $("#login").text("Logout");
     $("#login-mobile").text("Logout");
     $("#favorite-btn").append(`<button class="fav-btn btn">Favorite<i class="material-icons right">favorite</i></button>`);
+    $(".fav-btn").on("click", function(e){
+      e.preventDefault();
 
-    $.post(`api/users/${username}/${like}`, function(data) {
+      $.post(`api/users/${username}/${id}`, function(data) {
+
+      });
+      location.href="/user";
 
     });
+
+
     // $("#favorite-btn").append(`<button class="fav-btn btn disabled">Favorited<i class="material-icons right">favorite</i></button>`);
   }
 
